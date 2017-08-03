@@ -19,7 +19,8 @@ y_or = 500;
 y_can = 600;
 
 function setup(){
-  createCanvas(x_can,y_can);
+  var can = createCanvas(x_can,y_can);
+  can.parent("canvas");
   noStroke();
   player = new Player();
   ground = new Ground();
