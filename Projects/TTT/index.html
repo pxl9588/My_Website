@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Simon Game</title>
+    <title>Tic Tac Toe</title>
     <meta charset="utf-8">
 
     <link rel="stylesheet" href="../stylesheets/bootstrap.css">
 
     <script src="js/p5.js"></script>
     <script src="js/sketch.js"></script>
-    <script src="js/square.js"></script>
+    <script src="js/cell.js"></script>
     <style>
         .noSelect {
           -webkit-touch-callout: none;
@@ -28,21 +28,22 @@
             <a class="navbar-brand" href="https://pxl9588.github.io/">Home</a>
           </div>
           <ul class="nav navbar-nav">
-            <li class="active"><a href="https://pxl9588.github.io/Projects/Simon/index.html">Simon</a></li>
-            <li><a href="https://pxl9588.github.io/Projects/TTT/index.html">Tic-Tac-Toe</a></li>
+            <li><a href="https://pxl9588.github.io/Projects/Simon/index.html">Simon</a></li>
+            <li class="active"><a href="https://pxl9588.github.io/Projects/TTT/index.html">Tic-Tac-Toe</a></li>
             <li><a href="https://pxl9588.github.io/Projects/Platformer/index.html">Platformer</a></li>
           </ul>
         </div>
       </nav>
     </header>
     <div class="container">
-      <h1> Welcome to Simon, a simple memory game.</h1>
-      <p> Instructions: Memorize the order of the flashing squares and click them in the order that they appeared.</p>
-      <div class="row">
-          <div class="col-md-6 noSelect"><button class="btn-primary" id="play_button" onclick="start()"> Start</button>
-          <h3 class="noSelect" id="score">Score: 0</h3></div>
-          <div class="col-md-6" id="canvas"></div>
+      <h1> Welcome to Tic Tac Toe!</h1>
+      <p style="font-size:20px"> Players take turns placing their object in a grid space, first to 3 in a row wins</p>
+          <div class="row">
+            <div class="col-md-3"><p style="font-size:20px">Turn: <span id="turn"></span></p></div>
+            <div class="col-md-3"><p style="font-size:20px">Turn: <span id="object"></span></p></div>
+          </div>
+          <div id="canvas"></div>
+          <button class="btn btn-primary" onclick="Restart()">Restart</btn>
       </div>
-  </div>
   </body>
 </html>
