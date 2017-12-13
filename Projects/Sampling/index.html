@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Snake</title>
+    <title>Sampling</title>
     <meta charset="utf-8">
 
     <link rel="stylesheet" href="stylesheets/bootstrap.css">
@@ -9,14 +9,6 @@
     <script src="js/p5.js"></script>
     <script src="js/sketch.js"></script>
     <script src="js/circle.js"></script>
-    <script>
-        window.addEventListener("keydown", function(e) {
-        // space and arrow keys
-        if([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
-            e.preventDefault();
-        }
-        }, false);
-    </script>
     <style>
         .noSelect {
           -webkit-touch-callout: none;
@@ -70,7 +62,7 @@
             <div class="form-group">
               <input type="text" class="form-control" id="usr" placeholder="Enter a sample time">
               <div class="radio">
-                <label><input type="radio" value="1" name = "count" id="1">1 Circle</label>
+                <label><input type="radio" value="1" name = "count" id="1" checked="checked">1 Circle</label>
               </div>
               <div class="radio">
                 <label><input type="radio" value="2" name = "count" id="2">2 Circles</label>
@@ -79,6 +71,7 @@
                 <label><input type="radio" value="4" name = "count" id="4">4 Circles</label>
               </div>
               <button class="btn btn-primary" id="start" onclick="start()">Start</button>
+              <div id="f">0 Hz</div>
             </div>
           </td>
         </tr>

@@ -1,7 +1,7 @@
 var height;
 var width;
 var sample;
-var time;
+var freq;
 var startx;
 var starty;
 var count;
@@ -49,8 +49,8 @@ function setup() {
 function draw() {
   fill(255);
   ellipse(0,0,200,200);
-  time = millis()/1000;
-  rotateZ(time*2*PI*sample);
+  freq = millis()/500;
+  rotateZ(freq*2*PI*sample);
   fill(255,0,0);
   for (var i = 0; i < circles.length; i++) {
     circles[i].draw();
@@ -58,5 +58,6 @@ function draw() {
 }
 function start(){
   setup();
-  var but = document.getElementById('start');
+  var but = document.getElementById('f');
+  but.innerHTML = 1/sample +" Hz";
 }
