@@ -12,6 +12,7 @@ function Tile(x,y,b){
     else{
       fill(236,228,217);
     }
+    noStroke();
     rect(this.x,this.y,this.width,this.width);
   };
 

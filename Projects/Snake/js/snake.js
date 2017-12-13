@@ -2,20 +2,21 @@ function Snake(x,y){
   this.tail = new Array();
   this.headx = x;
   this.heady = y;
+  this.total = 0;
   this.xvel = 0;
   this.yvel = 0;
 
   Snake.prototype.draw = function () {
-    fill(127,51,78);
-    rect(this.headx*20,this.heady*20,20,20);
     this.head();
-    for(var i =0; i<this.tail.length;i++){
+    for(var i=0; i<this.tail.length;i++){
+      noStroke();
       fill(127,51,78)
-      rect(this.tail[i][0]*20,this.tail[i][1]*20,20,20);
+      rect(this.tail[i].x*20,this.tail[i].y*20,20,20);
     }
   }
   Snake.prototype.head = function(){
-    noStroke();
+    fill(127,51,78);
+    rect(this.headx*20,this.heady*20,20,20);
     if(this.xvel == 1){
       fill(255,0,0);
       rect(this.headx*20+20,this.heady*20+10,5,3);
@@ -47,10 +48,22 @@ function Snake(x,y){
     stroke(0);
   }
   Snake.prototype.update = function(){
-    this.headx += this.xvel
-    this.heady += this.yvel
+
+    if(this.total == this.tail.length){
+      for (var i = 0; i < this.tail.length-1; i++) {
+        this.tail[i] = this.tail[i+1];
+      }
+    }
+    this.tail[this.total-1] = createVector(this.headx,this.heady);
+
+    this.headx += this.xvel;
+    this.heady += this.yvel;
+
+    if(this.l < 9){
+      this.headx = constrain(this.headx,1,28);
+      this.heady = constrain(this.heady,1,18);
+    }
     this.draw();
-    this.follow();
   }
   Snake.prototype.direction = function(x,y){
     if((x + this.xvel != 0) || (y + this.yvel != 0 )){
@@ -58,30 +71,12 @@ function Snake(x,y){
       this.yvel = y;
     }
   }
+
   Snake.prototype.add = function(){
-    var x = this.headx;
-    var y = this.heady;
-    if(this.xvel == 1){
-      this.tail.push([x-20,y]);
-    }
-    else if (this.xvel == -1){
-      this.tail.push([x+20,y]);
-    }
-    else if(this.yvel == 1){
-      this.tail.push([x,y-20]);
-    }
-    else{
-      this.tail.push([x,y+20]);;
-    }
+    this.total++;
   }
-  Snake.prototype.follow = function(){
-    for (var i = this.tail.length-1; i > 0; i--) {
-      this.tail[i][0] = this.tail[i-1][0];
-      this.tail[i][1] = this.tail[i-1][1];
-    }
-    if(this.tail.length >= 1){
-      this.tail[0][0] = this.headx;
-      this.tail[0][1] = this.heady;
-    }
+  Snake.prototype.pause = function(){
+    snake.xvel = 0;
+    snake.yvel = 0;
   }
 }

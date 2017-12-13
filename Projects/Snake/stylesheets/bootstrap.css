@@ -2249,7 +2249,7 @@ pre code {
   }
 }
 table {
-  background-color: transparent;
+  background-color: #ECE4DA;
 }
 caption {
   padding-top: 8px;
@@ -2292,7 +2292,7 @@ th {
   border-top: 2px solid #ddd;
 }
 .table .table {
-  background-color: #fff;
+  background-color: #ECE4DA;
 }
 .table-condensed > thead > tr > th,
 .table-condensed > tbody > tr > th,

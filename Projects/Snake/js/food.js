@@ -3,6 +3,7 @@ function Food(x,y){
   this.y = y;
 
   Food.prototype.make = function(){
+    noStroke();
     fill(61,219,61);
     ellipse(this.x+11,this.y+11,15,15);
   }
