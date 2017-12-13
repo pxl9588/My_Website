@@ -1,21 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Platformer</title>
+    <title>Snake</title>
     <meta charset="utf-8">
-
-    <link rel="stylesheet" href="../stylesheets/bootstrap.css">
-
 
     <script src="js/p5.js"></script>
     <script src="js/sketch.js"></script>
-    <script src="js/Player.js"></script>
-    <script src="js/Floor.js"></script>
-    <script src="js/Ground.js"></script>
-    <script src="js/Cloud.js"></script>
-    <script src="js/Stars.js"></script>
-    <script src="js/Sun.js"></script>
-    <script src="js/Moon.js"></script>
+    <script src="js/board.js"></script>
+    <script src="js/snake.js"></script>
+    <script src="js/tile.js"></script>
+    <script src="js/food.js"></script>
     <script>
         window.addEventListener("keydown", function(e) {
         // space and arrow keys
@@ -25,28 +19,36 @@
         }, false);
     </script>
     <style>
+        .noSelect {
+          -webkit-touch-callout: none;
+          -webkit-user-select: none;
+          -khtml-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+        }
     </style>
   </head>
-
   <body>
     <header>
       <nav class="navbar navbar-default">
+        <div class="container-fluid">
           <div class="navbar-header">
             <a class="navbar-brand" href="https://pxl9588.github.io/">Home</a>
           </div>
           <ul class="nav navbar-nav">
             <li><a href="https://pxl9588.github.io/Projects/Simon/index.html">Simon</a></li>
             <li><a href="https://pxl9588.github.io/Projects/TTT/index.html">Tic-Tac-Toe</a></li>
-            <li class="active"><a href="https://pxl9588.github.io/Projects/Platformer/index.html">Platformer</a></li>
-            <li><a href="https://pxl9588.github.io/Projects/Snake/index.html">Snake</a></li>
+            <li><a href="https://pxl9588.github.io/Projects/Platformer/index.html">Platformer</a></li>
+            <li class="active"><a href="https://pxl9588.github.io/Projects/Snake/index.html">Snake</a></li>
           </ul>
+        </div>
       </nav>
     </header>
     <div class="container">
-      <h3>Welcome to my Platform game. It is still in early development, enjoy the sun and moon.</h3>
-      <p>Use the arrow keys to move side to side and spacebar to jump!</p>
-      <div id="canvas">
-      </div>
-    </div>
+      <h1> Welcome to Snake.</h1>
+      <p> Instructions: Use the arrow keys to navigate the snake.</p>
+      <div id="canvas"></div>
+  </div>
   </body>
 </html>
