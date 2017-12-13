@@ -8,10 +8,7 @@
 
     <script src="js/p5.js"></script>
     <script src="js/sketch.js"></script>
-    <script src="js/board.js"></script>
-    <script src="js/snake.js"></script>
-    <script src="js/tile.js"></script>
-    <script src="js/food.js"></script>
+    <script src="js/circle.js"></script>
     <script>
         window.addEventListener("keydown", function(e) {
         // space and arrow keys
@@ -42,26 +39,27 @@
             <li><a href="https://pxl9588.github.io/Projects/Simon/index.html">Simon</a></li>
             <li><a href="https://pxl9588.github.io/Projects/TTT/index.html">Tic-Tac-Toe</a></li>
             <li><a href="https://pxl9588.github.io/Projects/Platformer/index.html">Platformer</a></li>
-            <li class="active"><a href="https://pxl9588.github.io/Projects/Snake/index.html">Snake</a></li>
-            <li><a href="https://pxl9588.github.io/Projects/Sampling/index.html">Sampling</a></li>
+            <li><a href="https://pxl9588.github.io/Projects/Snake/index.html">Snake</a></li>
+            <li class="active"><a href="https://pxl9588.github.io/Projects/Sampling/index.html">Sampling</a></li>
           </ul>
         </div>
       </nav>
     </header>
     <div class="container">
-      <h1> Welcome to Snake!</h1>
+      <h1>This is a demonstration on sampling</h1>
       <p> Instructions</p>
       <ul>
-        <li> Choose a difficulty on the right and click Start. </li>
-        <li> Control the snake with the Arrow Keys or WASD. Avoid hitting yourself or the blue walls.</li>
+        <li> Type in a sampling time </li>
+        <li> Sampling Time (T<sub>s</sub> = 1/f<sub>s</sub>)</li>
+        <li> &omega; = 2&pi;</li>
+        <li> &omega;&#770; = &omega;T<sub>s</sub></li>
       </ul>
       <table class="table table-responsive">
         <tr>
           <th>
-            Game Screen
           </th>
           <th>
-            Difficulty
+            Sampling Time
           </th>
         </tr>
         <tr>
@@ -69,17 +67,22 @@
               <div id="canvas"></div>
           </td>
           <td>
-            <div class="btn-group-vertical">
-                <button class="btn btn-primary" id="easy" onclick="easy()">Easy</button>
-                <button class="btn btn-primary" id="medium" onclick="medium()">Medium</button>
-                <button class="btn btn-primary" id="hard" onclick="hard()">Hard</button>
-                <button class="btn btn-primary" id="impossible" onclick="impossible()">Impossible</button>
+            <div class="form-group">
+              <input type="text" class="form-control" id="usr" placeholder="Enter a sample time">
+              <div class="radio">
+                <label><input type="radio" value="1" name = "count" id="1">1 Circle</label>
               </div>
+              <div class="radio">
+                <label><input type="radio" value="2" name = "count" id="2">2 Circles</label>
+              </div>
+              <div class="radio">
+                <label><input type="radio" value="4" name = "count" id="4">4 Circles</label>
+              </div>
+              <button class="btn btn-primary" id="start" onclick="start()">Start</button>
+            </div>
           </td>
         </tr>
     </table>
-    <button class="btn btn-primary" id="start" onclick="start()">Start</button>
-    <button class="btn btn-primary" id="start" onclick="pause()">Pause</button>
   </div>
   </body>
 </html>
