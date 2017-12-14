@@ -142,6 +142,11 @@ function snakeCheck(){
     }
   }
 }
+function yuliya(){
+  level = 4;
+  var but = document.getElementById('yuliya');
+  but.onclick = function(){ return false;}
+}
 function easy(){
   level = 10;
   var but = document.getElementById('easy');
