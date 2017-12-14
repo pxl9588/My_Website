@@ -145,27 +145,22 @@ function snakeCheck(){
 function yuliya(){
   level = 4;
   var but = document.getElementById('yuliya');
-  but.onclick = function(){ return false;}
 }
 function easy(){
   level = 10;
   var but = document.getElementById('easy');
-  but.onclick = function(){ return false;}
 }
 function medium(){
   level = 20;
   var but = document.getElementById('medium');
-  but.onclick = function(){ return false;}
 }
 function hard(){
   level = 25;
   var but = document.getElementById('hard');
-  but.onclick = function(){ return false;}
 }
 function impossible(){
   level = 40;
   var but = document.getElementById('impossible');
-  but.onclick = function(){ return false;}
 }
 function start(){
   setup();
