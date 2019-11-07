@@ -3,13 +3,13 @@ var input;
 var response;
 
 function setup() {
-  response = ""
+  response = "";
   input = document.getElementById("usr").value;
   var words = input.split(" ");
   for(var word_index = 0; word_index < words.length; word_index++){
     var word = words[word_index]
     var len = word.length;
-    var remaining_conversion = floor(len/2) + len % 2;
+    var remaining_conversion = Math.floor(len/2) + len % 2;
     for(var character_index = 0; character_index < len; character_index++)
     {
       var chr = word.charAt(character_index);
@@ -20,7 +20,7 @@ function setup() {
       }
       else
       {
-        if(random(0,1) <= chance_to_hit)
+        if(Math.random(0,1) <= chance_to_hit)
         {
           if(chr == chr.toUpperCase())
           {
