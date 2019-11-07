@@ -34,6 +34,7 @@ function setup() {
         } // end of chance to hit if
         else
         {
+          //If not converted, just add it to string
           response += chr;
         }
       } // end of character check if
