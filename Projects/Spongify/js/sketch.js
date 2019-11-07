@@ -6,11 +6,11 @@ function setup() {
   response = ""
   input = document.getElementById("usr").value;
   var words = input.split(" ");
-  for(int word_index = 0; word_index < words.length; word_index++){
+  for(var word_index = 0; word_index < words.length; word_index++){
     var word = words[word_index]
     var len = word.length;
     var remaining_conversion = floor(len/2) + len % 2;
-    for(int character_index = 0; character_index < len )
+    for(var character_index = 0; character_index < len; character_index++)
     {
       var chr = word.charAt(character_index);
       var chance_to_hit = remaining_conversion / (len - character_index);
