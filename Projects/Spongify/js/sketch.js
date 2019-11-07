@@ -35,7 +35,7 @@ function setup() {
         else
         {
           //If not converted, just add it to string
-          response += chr;
+          response += chr.toLowerCase();
         }
       } // end of character check if
     } // end of character in word loop
