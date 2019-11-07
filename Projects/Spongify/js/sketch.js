@@ -32,6 +32,10 @@ function setup() {
           }
           remaining_conversion--;
         } // end of chance to hit if
+        else
+        {
+          response += chr;
+        }
       } // end of character check if
     } // end of character in word loop
     response += " "
